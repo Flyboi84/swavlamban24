@@ -4,6 +4,8 @@ import yaml
 from yaml.loader import SafeLoader
 import streamlit_authenticator as stauth
 
+st.write(f"streamlit_authenticator version: {stauth.__version__}")
+
 # Load configuration
 with open('config.yaml', 'r') as file:
     config = yaml.load(file, Loader=SafeLoader)
@@ -25,7 +27,8 @@ c.execute('''CREATE TABLE IF NOT EXISTS registrations (org_name TEXT, person_nam
 conn.commit()
 
 # Login section
-name, authentication_status, username = authenticator.login("Login", 'main')
+with st.container():
+    name, authentication_status, username = authenticator.login("Login")
 
 if authentication_status:
     st.success(f"Welcome {name}")
