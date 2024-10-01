@@ -1,6 +1,6 @@
 import streamlit as st
 import sqlite3
-from streamlit_authenticator import Authenticate
+#from streamlit_authenticator import Authenticate
 import streamlit_authenticator as stauth
 
 # Initialize database connection
@@ -26,7 +26,7 @@ credentials = {
     }
 }
 
-authenticator = Authenticate(credentials)
+authenticator = stauth.Authenticate(credentials)
 
 # Login section
 org_name = authenticator.login(form_name="Login")#, location:'main')
