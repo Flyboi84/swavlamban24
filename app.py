@@ -11,8 +11,19 @@ c.execute('''CREATE TABLE IF NOT EXISTS registrations
              (org_name TEXT, person_name TEXT, email TEXT)''')
 conn.commit()
 
-# Sample credentials (you can use a more secure system)
-credentials = {"IA": "ZAQ1zaq1", "IAF": "xsw2XSW2"}
+# Correct credentials format
+credentials = {
+    "usernames": {
+        "IA": {
+            "name": "Indian Army",
+            "password": "ZAQ1zaq1"
+        },
+        "IAF": {
+            "name": "Indian Air Force",
+            "password": "xsw2XSW2"
+        }
+    }
+}
 
 authenticator = Authenticate(credentials)
 
@@ -35,11 +46,10 @@ if org_name:
         role = st.text_input(f"Role of Person {i+1}", key=f"role_{i}")
         
         if st.button(f"Submit Person {i+1}"):
-            c.execute("INSERT INTO registrations (org_name, person_name, email, role) VALUES (?, ?, ?, ?)", 
-                      (org_name, person_name, email, role))
+            c.execute("INSERT INTO registrations (org_name, person_name, email) VALUES (?, ?, ?)", 
+                      (org_name, person_name, email))
             conn.commit()
             st.success(f"Details for {person_name} added")
 
 # Closing connection
 conn.close()
-
