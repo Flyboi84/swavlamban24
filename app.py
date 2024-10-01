@@ -28,7 +28,7 @@ credentials = {
 authenticator = Authenticate(credentials)
 
 # Login section
-org_name = authenticator.login("Login", "main")
+org_name = authenticator.login("Login", 'main')
 
 if org_name:
     st.success(f"Welcome {org_name}")
