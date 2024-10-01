@@ -25,7 +25,7 @@ c.execute('''CREATE TABLE IF NOT EXISTS registrations (org_name TEXT, person_nam
 conn.commit()
 
 # Login section
-name, authentication_status, username = authenticator.login("Login", "main")
+name, authentication_status, username = authenticator.login("Login", 'main')
 
 if authentication_status:
     st.success(f"Welcome {name}")
