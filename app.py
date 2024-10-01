@@ -1,6 +1,6 @@
 import streamlit as st
 import sqlite3
-#from streamlit_authenticator import Authenticate
+from streamlit_authenticator import Authenticate
 import streamlit_authenticator as stauth
 
 # Initialize database connection
