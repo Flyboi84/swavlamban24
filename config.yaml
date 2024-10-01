@@ -1,0 +1,12 @@
+credentials:
+  usernames:
+    IA:
+      name: Indian Army
+      password: $2b$12$rj7ZUYcKBNqcOUWOhGhJy.SEaJJi4bcIhHD1.OMqNbEZdLKVncaar  # Hashed version of ZAQ1zaq1
+    IAF:
+      name: Indian Air Force
+      password: $2b$12$Y.4CJ7WhNbQS5zjoS8IRwewX.PBzBXdB3PvB1.11nHC7/9nVlXFbC  # Hashed version of xsw2XSW2
+cookie:
+  expiry_days: 30
+  key: some_signature_key
+  name: some_cookie_name
